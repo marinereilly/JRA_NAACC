@@ -1,4 +1,7 @@
 #Most of the code comes from mhpob (Thanks for your help Mike!)
+#https://github.com/mhpob/Random/blob/master/Scripts/naacc_download.R
+# North Atlantic Aquatic Connectivity Collaborative (NAACC) data download
+# https://naacc.org/naacc_search_crossing.cfm
 
 library(httr)
 
