@@ -1,3 +1,5 @@
+#Most of the code comes from mhpob (Thanks for your help Mike!)
+
 library(httr)
 
 POST('https://naacc.org/naacc_search_crossing_action.cfm',
