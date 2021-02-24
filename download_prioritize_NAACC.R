@@ -9,13 +9,15 @@
 
 library(httr)
 
+watershed<- 141
+
 POST('https://naacc.org/naacc_search_crossing_action.cfm',
      body = list(
        sceReset = 'false',
        stateSelect = 12,
        town = '',
        stream = 'wvhqw4vju2vh',
-       watershedID = 143,
+       watershedID = watershed,
        observerID = '',
        coordinatorID = '',
        SurveyId = '',
@@ -35,7 +37,7 @@ GET('https://naacc.org/naacc_export_begin.cfm?ds=naacc&r=shapefile')
 
 
 response <- GET('https://naacc.org/excel/0/shapefile.zip', write_disk(
-                (paste0('NAACC_shapefile_',Sys.Date(), '.zip')
+                (paste0('NAACC_shapefile_',watershed,"_",Sys.Date(), '.zip')
                 )
 ))
 
@@ -43,13 +45,13 @@ unzip(file.path(response$content),
       exdir = gsub('.zip', '', file.path(response$content))
 )
 
-shapefile_name<-paste0('NAACC_shapefile_',Sys.Date(), '/export.shp')
+shapefile_name<-paste0('NAACC_shapefile_',watershed,"_",Sys.Date(), '/export.shp')
 
 library(sf)
 library(dplyr)
 library(readr)
 
-NAACC_points<-st_read(paste0("D://Erin/Documents/ArcGIS/Projects/NAACC/",
+NAACC_points<-st_read(paste0("D://Erin/Documents/ArcGIS/Projects/NAACC/NAACC_Code/",
                              shapefile_name))
 
 
