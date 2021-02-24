@@ -1,7 +1,11 @@
 #Most of the code comes from mhpob (Thanks for your help Mike!)
-#https://github.com/mhpob/Random/blob/master/Scripts/naacc_download.R
+# https://github.com/mhpob/Random/blob/master/Scripts/naacc_download.R
 # North Atlantic Aquatic Connectivity Collaborative (NAACC) data download
 # https://naacc.org/naacc_search_crossing.cfm
+
+#Watershed ID 143 is lower James, 144 is Appomattox, 145 hampton roads
+#141 Middle James-Buffalo, 142 Middle James Willis, 266 Rivanna, 
+#265 Upper James
 
 library(httr)
 
